@@ -84,28 +84,28 @@ void init_all(void)
 
 void main(void)
 {
-    if((PCON&0x10)==0) //���POFλ=0
+    if((PCON&0x10)==0) //如果POF位=0
     {
-       PCON=PCON|0x10;  //��POFλ��1
-       IAP_CONTR=0x60;  //����λ,��ISP���������
+       PCON=PCON|0x10;  //将POF位置1
+       IAP_CONTR=0x60;  //软复位,从ISP监控区启动
     }
     else
     {
-       PCON=PCON&0xef;  //��POFλ����
+       PCON=PCON&0xef;  //将POF位清零
     }
 
     lcdInitinal();
-    lcdMsg("�㽭��ҽҩ��ѧ",1,0);
-	lcdMsg("Ƕ��ʽ�γ�",2,0);
-	lcdMsg("���",3,0);
+    lcdMsg("浙江中医药大学",1,0);
+	lcdMsg("嵌入式课程",2,0);
+	lcdMsg("金尧",3,0);
     lcdMsg("www.zcmu.edu.cn",4,0);
     delay_ms(2000);
     lcdInitinal();
     delay_ms(2);
-    lcdMsg("��----",4,0);
-    lcdMsg("���ţ�----",2,0);
-    lcdMsg("���ѣ�----",3,0);
-    lcdMsg("״̬��----",1,0);
+    lcdMsg("余额：----",4,0);
+    lcdMsg("卡号：----",2,0);
+    lcdMsg("消费：----",3,0);
+    lcdMsg("状态：----",1,0);
 
     init_all();
 
